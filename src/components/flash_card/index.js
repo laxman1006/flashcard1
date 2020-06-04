@@ -14,6 +14,8 @@ const useStyles = makeStyles({
     height:'500px',
     marginTop:'100px',
     marginLeft:300,
+    position:"relative",
+    top:-10,
     
     },
     bullet: {
@@ -30,6 +32,7 @@ const useStyles = makeStyles({
     column1:
     {
         height:"100vh",
+        position:'relative',
      background:'#FAFAFA',
      
     },
@@ -59,13 +62,18 @@ div2:
     },
     root1:
     {
-        height:'500px !important',
+        height:'550px !important',
         width:500,
+        position: 'fixed',
+    top: 158,
+    bottom:10,
     },
     root2:
     {
-        height:'500px !important',
-        width:450,
+        height:'600px !important',
+        width:446,
+        position: 'fixed',
+    top: 131
     }
   });
 export default function Cards() {
