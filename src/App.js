@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import Cards from './components/flash_card/index';
+export default function App() {
   return (
-    <div className="App">
-     <h1>laxmancibi</h1>
+    <div>
+     <Cards />
     </div>
-  );
-}
+  ); 
 
-export default App;
+ 
+  }
