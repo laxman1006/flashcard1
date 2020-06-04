@@ -15,7 +15,9 @@ const useStyles = makeStyles({
     marginTop:'100px',
     marginLeft:300,
     position:"relative",
-    top:-10,
+    top:-10,    
+    borderRadius:'10px',
+    color:'transparent',
     
     },
     bullet: {
@@ -67,13 +69,16 @@ div2:
         position: 'fixed',
     top: 158,
     bottom:10,
+    borderRadius:'10px',
     },
     root2:
     {
         height:'600px !important',
         width:446,
         position: 'fixed',
-    top: 131
+    top: 131,
+    borderRadius:'10px',
+    marginLeft:'3px',
     }
   });
 export default function Cards() {
