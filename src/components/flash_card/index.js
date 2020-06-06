@@ -92,7 +92,7 @@ export default function Cards() {
                 page:1
             },
             {
-                content:"ife is a journey that every day. However, that doesn’t mean you always wake up ready to seize the day, and sometimes need a reminder that life is a great gift.",
+                content:"life is a journey that every day. However, that doesn’t mean you always wake up ready to seize the day, and sometimes need a reminder that life is a great gift.",
                 page:2
             },
             {
@@ -100,7 +100,7 @@ export default function Cards() {
                 page:3
             },
             {
-                content:"Money and success don’t change people; they merely amplify what is already there.” — Will Smith",
+                content:"Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.” – Steve Jobs",
                 page:4
             },
             {
