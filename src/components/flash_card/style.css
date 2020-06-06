@@ -1,0 +1,27 @@
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: 800;
+    line-height: 4rem;
+    font-size: 2rem;
+}
+.move_left_button_parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.move_right_button_parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button_style {
+    background: gray;
+    color: white;
+    /* margin: 10px !important; */
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+}
