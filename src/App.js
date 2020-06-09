@@ -7,6 +7,4 @@ export default function App() {
      <Cards />
     </div>
   ); 
-
- 
   }

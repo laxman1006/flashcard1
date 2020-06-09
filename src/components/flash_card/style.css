@@ -1,13 +1,17 @@
 .card-content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 10px;
-    margin-top: 20px;
-    font-weight: 800;
-    line-height: 4rem;
-    font-size: 2rem;
+    top: 215px;
+    left: 619px;
+    width: 484px;
+    height: 425px;
+    text-align: left;
+    font: 30px bold Neutra Text;
+    letter-spacing: 0px;
+    color: #444444;
+    opacity: 1; 
+    
 }
+
+
 .move_left_button_parent {
     display: flex;
     align-items: center;
@@ -18,10 +22,25 @@
     align-items: center;
     justify-content: center;
 }
-.button_style {
-    background: gray;
+.button_style1 {
+        background: #00000029;
+        color: white;
+        /* margin: 10px !important; */
+        padding: 20px 20px 20px 20px;
+        border-radius: 50px;
+        outline: none;
+        margin-top:380px;
+        margin-left:120px;
+        border:none;
+}
+.button_style2 {
+    background: #00000029;
     color: white;
     /* margin: 10px !important; */
-    padding: 5px 20px 5px 20px;
-    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 50px;
+    outline: none;
+    margin-top:380px;
+    margin-left:-52px;
+    border:none;
 }

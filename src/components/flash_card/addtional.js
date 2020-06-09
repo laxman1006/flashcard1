@@ -11,17 +11,15 @@ import { grey } from '@material-ui/core/colors';
 import './style.css';
 const useStyles = makeStyles({
     root: {
-       width:"550px",
-       marginTop:"142px",
-       marginLeft:"50px",
-       position:"fixed",
-       top:"10px",
-       transform: "matrix(-1, 0, 0, -1, 0, 0)",
-background: "#FFFFFF 0% 0% no-repeat padding-box",
-boxShadow: "0px 0px 28px #00000029",
-borderRadius: "20px",
-opacity: 0.53,
-
+        top: "142px",
+        left: "508px",
+        width: "478px",
+        height: "589px",
+        transform: "matrix(-1, 0, 0, -1, 0, 0)",
+        background: "#FFFFFF 0% 0% no-repeat padding-box",
+        boxShadow: "0px 0px 28px #00000029",
+        borderRadius: "20px",
+        opacity: 0.53,
     },
     bullet: {
         display: 'inline-block',
@@ -34,21 +32,12 @@ opacity: 0.53,
     pos: {
         marginBottom: 12,
     },
-
-    column0:
-    {
-        height: "100vh !important",
-    },
-    column:
-    {
-
-    },
     column1:
     {
         top: "0px",
         left: "258px",
         width: "1182px",
-        height: "auto",
+        height: "802px",
         background: "#EEF3F9 0% 0% no-repeat padding-box",
         boxShadow: "-2px 3px 6px #00000029",
         borderRadius: "33px 0px 0px 33px",
@@ -77,41 +66,31 @@ opacity: 0.53,
     column3:
     {
 
-      
-    },
-    column4:
-    {
-        top: "0px",
-        left: "0px",
-        width: "308px",
-        height: "auto",
-        background: "#3D4690 0% 0% no-repeat padding-box",
-        opacity: 1,
+        paddingLeft: 25,
     },
     root1:
     {
-      width:"470px", 
-      paddingLeft:"30px",
-      transform: "matrix(-1, 0, 0, -1, 0, 0)",
-      background: "#FFFFFF 0% 0% no-repeat padding-box",
-boxShadow:" 0px 0px 28px #00000029",
-borderRadius: "20px",
-opacity: 0.45,
-      
+        top: "117px",
+        left: "542px",
+        width: "522px",
+        height: "633px",
+        transform: "matrix(-1, 0, 0, -1, 0, 0)",
+        background: "#FFFFFF 0% 0% no-repeat padding-box",
+        boxShadow: "0px 0px 28px #00000029",
+        borderRadius: "20px",
+        opacity: 0.45,
     },
     root2:
-   {
-        width:"400px",
-        paddingLeft:"40px",
-      
-   },
-    column5:
     {
-      
-       
-        
-       
-    },
+        top: "100px",
+        left: "583px",
+        width: "544px",
+        height: "670px",
+        background: "#FFFFFF 0% 0% no-repeat padding-box",
+        boxShadow: "0px 0px 28px #00000029",
+        borderRadius: "20px",
+        opacity: 1,
+    }
 });
 export default function Cards() {
     const classes = useStyles();
@@ -173,17 +152,19 @@ export default function Cards() {
     }
     const bull = <span className={classes.bullet}>•</span>;
     return (
-        <Grid container lg={12} md={12} sm={12} xs={12} className={classes.column0} spacing={0}>
-            <Grid item lg={2} md={2} sm={12} xs={12} className={classes.column4}>
+        <Grid container lg={12} md={12} sm={12} xs={12} spacing={0}>
+            <Grid item lg={2} md={2} sm={12} xs={12} >
 
             </Grid>
-            <Grid item lg={10} md={10} sm={12} xs={12} className={classes.column1}>
-                <Grid container lg={10} md={10} sm={12} xs={12} className={classes.column}>
-                    <Grid item lg={2} md={8} sm={12} xs={12} className={classes.column5}>
-                    <button className="button_style1"  onClick={() => card_moving('left')}></button>
-                    </Grid>
-
-                    <Grid item lg={8} md={8} sm={12} xs={12} className={classes.column}>
+            <Grid item lg={10} md={10} sm={12} xs={12} className={classes.column1} >
+                <div>
+                    <div className={classes.div1}>Design Sprint</div>
+                    <div className={classes.div2}>Categories/Design</div>
+                </div>
+                <Grid item lg={2} md={2} sm={12} xs={12} >
+                    <button className="button_style" onClick={() => card_moving('left')}>Left</button>
+                </Grid>
+                <Grid item lg={8} md={8} sm={12} xs={12} >
                     <Card className={classes.root}>
                         <Grid item lg={8} md={8} sm={12} xs={12} className={classes.column2} >
                             <Card className={classes.root1}>
@@ -201,14 +182,13 @@ export default function Cards() {
                         </Grid>
                    
                 </Card>
-              </Grid>
-                    <Grid item lg={2} md={2} sm={12} xs={12} className={classes.column}>
-                    <button className="button_style2" onClick={() => card_moving('right')}></button>
-
-              </Grid>
-
                 </Grid>
+                <Grid item lg={2} md={2} sm={12} xs={12} >
+                    <button className="button_style" onClick={() => card_moving('right')}>Right</button>
+                </Grid>
+
             </Grid>
+
         </Grid>
     );
 } 
