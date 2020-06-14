@@ -1,129 +1,75 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import Container from '@material-ui/core/Container';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import { grey } from '@material-ui/core/colors';
-import './style.css';
-const useStyles = makeStyles({
-    root: {
-       width:"550px",
-       marginTop:"142px",
-       marginLeft:"50px",
-       position:"fixed",
-       top:"10px",
-       transform: "matrix(-1, 0, 0, -1, 0, 0)",
-background: "#FFFFFF 0% 0% no-repeat padding-box",
-boxShadow: "0px 0px 28px #00000029",
-borderRadius: "20px",
-opacity: 0.53,
-
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
+import React from "react";
+import {
+    Typography,
+    makeStyles,
+    Grid,
+    Button,
+    IconButton,
+} from "@material-ui/core";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+const useStyles = makeStyles((theme) => ({
+    cardRoot: {
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "#EEF3F9",
     },
 
-    column0:
+    desktopView:
     {
-        height: "100vh !important",
+        paddingTop: "25%",
+        position: "absolute",
     },
-    column:
-    {
+    leftArrowRoot: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    RightArrowRoot: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    ArrowIcon: {
+        color: "#fff",
+    },
+    ArrowSpan: {
+        transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    },
+    ButtonStyle: {
+        padding: "20px 23px",
+        borderRadius: "50%",
+        border: "0px solid !important",
+        backgroundColor: "#E1E8F2",
+    },
+    cardContainer: {
+        position: "relative",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    contentText: {
+        fontSize: "28px",
+        fontWeight: 700,
+        color: "#444",
+    },
+   
 
-    },
-    column1:
-    {
-        top: "0px",
-        left: "258px",
-        width: "1182px",
-        height: "auto",
-        background: "#EEF3F9 0% 0% no-repeat padding-box",
-        boxShadow: "-2px 3px 6px #00000029",
-        borderRadius: "33px 0px 0px 33px",
-        opacity: 1,
-
-    },
-    div1:
-    {
-        marginTop: 50,
-        marginLeft: 50,
-        fontSize: 18,
-        fontWeight: "bold",
-    },
-    div2:
-    {
-
-        marginLeft: 50,
-        fontSize: 14,
-
-    },
-    column2:
-    {
-
-        paddingLeft: 25,
-    },
-    column3:
-    {
-
-      
-    },
-    column4:
-    {
-        top: "0px",
-        left: "0px",
-        width: "308px",
-        height: "auto",
-        background: "#3D4690 0% 0% no-repeat padding-box",
-        opacity: 1,
-    },
-    root1:
-    {
-      width:"470px", 
-      paddingLeft:"30px",
-      transform: "matrix(-1, 0, 0, -1, 0, 0)",
-      background: "#FFFFFF 0% 0% no-repeat padding-box",
-boxShadow:" 0px 0px 28px #00000029",
-borderRadius: "20px",
-opacity: 0.45,
-      
-    },
-    root2:
-   {
-        width:"400px",
-        paddingLeft:"40px",
-      
-   },
-    column5:
-    {
-      
-       
-        
-       
-    },
-});
-export default function Cards() {
+}));
+function Cards() {
     const classes = useStyles();
+
     const [state, setState] = React.useState({
         card_index: 0,
         card_data: [
             {
-                content: "“First, the sprint forces your team to focus on the most pressing questions. Second, the sprint allows you to learn from just the surface of a finished product.”",
+                content: "“First, the sprint forces your team to focus on the most pressing questions. Second, the sprint allows you to learn from just the surface of a finished product.”- Crayond",
                 page: 1
             },
             {
-                content: "life is a journey that every day. However, that doesn’t mean you always wake up ready to seize the day, and sometimes need a reminder that life is a great gift.",
+                content: "“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell.”",
                 page: 2
             },
             {
@@ -131,11 +77,11 @@ export default function Cards() {
                 page: 3
             },
             {
-                content: "Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.” – Steve Jobs",
+                content: "“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell.”",
                 page: 4
             },
             {
-                content: "“Sing like no one’s listening, love like you’ve never been hurt, dance like nobody’s watching, and live like it’s heaven on earth.” – (Attributed to various sources)",
+                content: "“Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.” – Steve Jobs",
                 page: 5
             }
         ]
@@ -171,44 +117,158 @@ export default function Cards() {
             }
         }
     }
-    const bull = <span className={classes.bullet}>•</span>;
     return (
-        <Grid container lg={12} md={12} sm={12} xs={12} className={classes.column0} spacing={0}>
-            <Grid item lg={2} md={2} sm={12} xs={12} className={classes.column4}>
+        <div className={classes.cardRoot}>
+            <Grid container className={classes.desktopView}>
+                <Grid md={1} lg={1} xl={1} container className={classes.left} ></Grid>
 
-            </Grid>
-            <Grid item lg={10} md={10} sm={12} xs={12} className={classes.column1}>
-                <Grid container lg={10} md={10} sm={12} xs={12} className={classes.column}>
-                    <Grid item lg={2} md={8} sm={12} xs={12} className={classes.column5}>
-                    <button className="button_style1"  onClick={() => card_moving('left')}></button>
-                    </Grid>
+                <Grid md={3} lg={3} xl={3} container className={classes.leftArrowRoot}>
+                    <Button className={classes.ButtonStyle}>
+                        <span className={classes.ArrowSpan}>
+                            <ArrowBackIosIcon
+                                className={classes.ArrowIcon}
+                                onClick={() => card_moving('left')} />
+                        </span>
+                    </Button>
+                </Grid>
+                <Grid md={5} lg={5} xl={5} container style={{ position: "relative" }}>
+                    <Grid container className={classes.cardContainer}>
+                        <div
+                            classes={classes.cardOne}
+                            style={{
+                                position: "absolute",
+                                width: "70%",
+                                backgroundColor: "#FFFFFF",
+                                boxShadow: "0px 0px 28px #00000029",
+                                borderRadius: "20px",
+                                opacity: "0.3",
+                                left: "7%",
+                                height: "400px",
+                            }}
+                        >
+                            <div style={{ padding: "50px" }}></div>
+                        </div>
+                        <div
+                            classes={classes.cardTwo}
+                            style={{
+                                position: "absolute",
+                                width: "70%",
+                                backgroundColor: "#FFFFFF",
+                                boxShadow: "0px 0px 28px #00000029",
+                                borderRadius: "20px",
+                                opacity: "0.5",
+                                left: "11%",
+                                height: "450px",
+                            }}
+                        >
+                            {" "}
+                            <div style={{ padding: "50px" }}></div>
+                        </div>
+                        <div
+                            classes={classes.cardFour}
+                            style={{
+                                position: "absolute",
+                                width: "70%",
+                                backgroundColor: "#FFFFFF",
+                                boxShadow: "0px 0px 28px #00000029",
+                                borderRadius: "20px",
+                                opacity: "0.5",
+                                right: "11%",
+                                height: "450px",
+                            }}
+                        >
+                            <div style={{ padding: "50px" }}></div>
+                        </div>
+                        <div
+                            classes={classes.cardFive}
+                            style={{
+                                position: "absolute",
+                                width: "70%",
+                                backgroundColor: "#FFFFFF",
+                                boxShadow: "0px 0px 28px #00000029",
+                                borderRadius: "20px",
+                                opacity: "0.3",
+                                right: "7%",
+                                height: "400px",
+                            }}
+                        >
+                            {" "}
+                            <div style={{ padding: "50px" }}></div>
+                        </div>
+                        <div
+                            classes={classes.cardThree}
+                            style={{
+                                position: "absolute",
+                                width: "70%",
+                                backgroundColor: "#FFFFFF",
+                                boxShadow: " 0px 0px 28px #00000029",
+                                borderRadius: "20px",
+                                height: "500px",
 
-                    <Grid item lg={8} md={8} sm={12} xs={12} className={classes.column}>
-                    <Card className={classes.root}>
-                        <Grid item lg={8} md={8} sm={12} xs={12} className={classes.column2} >
-                            <Card className={classes.root1}>
-                                <Grid item lg={8} md={8} sm={12} xs={12} className={classes.column3} >
-                                    <Card className={classes.root2}>
-                                        <div className="card-content">
-                                            <span>{state?.card_data[state?.card_index]?.content}</span>
-                                        </div>
-                                        <div style={{ textAlign: "center", marginTop: "60px" }}>
-                                            <span>{state?.card_data[state?.card_index]?.page}/{state.card_data.length}</span>
-                                        </div>
-                                    </Card>
+
+                                opacity: 1,
+                            }}
+                        >
+                            <div style={{
+                                padding: "50px", textAlign: "left",
+                                fontFamily: " Neutra Text",
+                                fontWeight: "bold",
+                                fontSize:"45px",
+                                letterSpacing: "0px",
+                                color: "#444444",
+                                opacity: 1
+                            }}>
+                                <div>
+                                    <Typography className={classes.contentText}>
+                                        {state?.card_data[state?.card_index]?.content}
+                                    </Typography>
+                                </div>
+                            </div>
+                            <Grid class={classes.contentFooter} direction="row" container>
+                                <Grid
+                                    md={6}
+                                    lg={6}
+                                    xl={6}
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "flex-end",
+                                        alignItems: "center",
+                                        position:"relative",
+  
+                                        font: "Regular 16px/19px Montserrat",
+                                        letterSpacing: "0.27px",
+                                        color: "#B7B7B7",
+                                        opacity: 1,
+                                    }}
+                                >
+                                    <Typography>{state?.card_data[state?.card_index]?.page}/{state.card_data.length}</Typography>
                                 </Grid>
-                            </Card>
-                        </Grid>
-                   
-                </Card>
-              </Grid>
-                    <Grid item lg={2} md={2} sm={12} xs={12} className={classes.column}>
-                    <button className="button_style2" onClick={() => card_moving('right')}></button>
-
-              </Grid>
-
+                                <Grid
+                                    md={5}
+                                    lg={5}
+                                    xl={5}
+                                    style={{ display: "flex", justifyContent: "flex-end" }}
+                                >
+                                    <IconButton aria-label="add to favorites">
+                                        <FavoriteIcon className={classes.favourite} />
+                                    </IconButton>
+                                    <IconButton aria-label="share">
+                                        <ShareIcon />
+                                    </IconButton>
+                                </Grid>
+                            </Grid>
+                        </div>
+                    </Grid>
+                </Grid>
+                <Grid md={3} lg={3} xl={3} container className={classes.RightArrowRoot}>
+                    <Button className={classes.ButtonStyle}>
+                        <span className={classes.ArrowSpan}>
+                            <ArrowForwardIosIcon className={classes.ArrowIcon} onClick={() => card_moving('right')} />
+                        </span>
+                    </Button>
                 </Grid>
             </Grid>
-        </Grid>
+        </div>
     );
-} 
+}
+export default Cards;
