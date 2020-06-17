@@ -1,0 +1,30 @@
+@media (max-width:768px) and (min-width:603px) {
+    .left
+    {
+        display: hidden;
+    }
+    .desktopView
+    {
+        padding-top:"10%" !important;
+        
+    }
+    }
+    @media (max-width:1024px) and (min-width:625px) {
+       .desktopView
+        {
+            padding-top:"30%";
+            
+        }
+    .contentFooter
+    {
+        padding-left: 40px;
+    display: flex;
+    }
+    }
+    @media screen and (min-width:425px) and (max-width:625px){
+        .content1
+        {
+            font-size: 22px;
+        }
+
+    }
